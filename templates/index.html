@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  
+<!--<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+  
+</head>
+
+<body>
+ <div class="login">
+	<!--<h1>Predict Salary Analysis</h1>-->
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="age" placeholder="age" required="required" /><br><br>
+        <input type="text" name="sex" placeholder="sex" required="required" /><br><br>
+        <input type="text" name="cp" placeholder="cp" required="required" /><br><br>
+        <input type="text" name="trestbps" placeholder="trestbps" required="required" /><br><br>
+        <input type="text" name="chol" placeholder="chol" required="required" /><br><br>
+        <input type="text" name="fbs" placeholder="fbs" required="required" /><br><br>
+        <input type="text" name="restecg" placeholder="restecg" required="required" /><br><br>
+        <input type="text" name="thalach" placeholder="thalach" required="required" /><br><br>
+        <input type="text" name="exang" placeholder="exang" required="required" /><br><br>
+        <input type="text" name="oldpeak" placeholder="oldpeak" required="required" /><br><br>
+        <input type="text" name="slope" placeholder="slope" required="required" /><br><br>
+        <input type="text" name="ca" placeholder="ca" required="required" /><br><br>
+	<input type="text" name="thal" placeholder="thal" required="required" /><br><br>
+
+        <button type="submit" >Predict</button>
+    </form>
+
+   <br>
+   <br>
+   <h1>{{ prediction_text }}</h1>
+
+ </div>
+
+
+</body>
+</html>
